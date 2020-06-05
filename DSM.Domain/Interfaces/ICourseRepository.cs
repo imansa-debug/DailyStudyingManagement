@@ -9,6 +9,7 @@ namespace DSM.Domain.Interfaces
     {
 
         List<Course> GetAllCourse();
+       
         Course GetCourseById(int id);
         void Add(Course course);
     }

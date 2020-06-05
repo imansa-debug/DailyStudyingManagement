@@ -16,10 +16,10 @@ namespace DSM.Infra.IoC
         {
             //Application Layer 
             service.AddScoped<ICourseService, CourseService>();
-
+            service.AddScoped<ICourseDetailService, CourseDetailService>();
             //Infra Data Layer
             service.AddScoped<ICourseRepository, CourseRepository>();
-
+            service.AddScoped<ICourseDetailRepository, CourseDetailRepository>();
 
         }
     }

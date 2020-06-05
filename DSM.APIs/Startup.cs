@@ -32,6 +32,10 @@ namespace DSM.APIs
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DailyStudyingManagementDBConnection"));
             });
+            services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
             services.AddControllers();
 
             RegisterServices(services);

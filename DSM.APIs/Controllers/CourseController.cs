@@ -25,6 +25,10 @@ namespace DSM.APIs.Controllers
         //Api/Course
         public IActionResult GetCourses()
         {
+
+            
+
+    
             var result = new ObjectResult(_courseService.GetCourses())
             {
                 StatusCode = (int)HttpStatusCode.OK
