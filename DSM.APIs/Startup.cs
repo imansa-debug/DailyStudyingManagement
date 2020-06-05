@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DSM.Infra.Data.Context;
+using DSM.Infra.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,8 @@ namespace DSM.APIs
                 options.UseSqlServer(Configuration.GetConnectionString("DailyStudyingManagementDBConnection"));
             });
             services.AddControllers();
+
+            RegisterServices(services);
         }
       public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -50,6 +53,10 @@ namespace DSM.APIs
             {
                 endpoints.MapControllers();
             });
+        }
+        public static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
     }
 }

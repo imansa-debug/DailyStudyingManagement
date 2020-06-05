@@ -4,14 +4,16 @@ using DSM.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DSM.Infra.Data.Migrations
 {
     [DbContext(typeof(DSMdBContext))]
-    partial class DSMdBContextModelSnapshot : ModelSnapshot
+    [Migration("20200604214919_ChangeImageUrlToImageName")]
+    partial class ChangeImageUrlToImageName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

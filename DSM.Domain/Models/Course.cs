@@ -29,7 +29,7 @@ namespace DSM.Domain.Models
         public string TeacherName { get; set; }
         [MaxLength(200)]
         [Required]
-        public string ImageUrl { get; set; }
+        public string ImageName { get; set; }
         [Required]
         public DateTime CreateDate { get; set; }
         //Navigation Properties
